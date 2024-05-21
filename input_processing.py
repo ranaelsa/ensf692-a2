@@ -70,8 +70,7 @@ def print_message(sensor):
     print("") 
     print("Light = " + sensor.light + " , Pedestrian: " + sensor.pedestrian + " , Vehicle: " + sensor.vehicle + " . ")
 
-# The main function will initialize a Sensor object and continuosly promt the user for a change through a while block. If 0 is selected, the program stops. If 1, 2, or 3 is is selected the function calls on the sensors instance method to update
-# the light, pedestrian, or vehicle status, then the print_message funcion is called to print the action message and current status.
+# The main function will initialize a Sensor object and continuosly promt the user for a change through a while block.
 def main():
     """Main function to run the Car Vision Detector Processing Program.
 
