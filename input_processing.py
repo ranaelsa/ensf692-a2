@@ -28,6 +28,7 @@ class Sensor:
         Returns:
             None
         """
+
         # Light status change
         if menu == 1:
             if (change == "green" or change == "yellow" or change ==  "red"):
@@ -80,6 +81,7 @@ def main():
     Returns:
         None
     """
+
     sensor = Sensor()
     print("\n***ENSF 692 Car Vision Detector Processing Program***\n")
     while(True):
@@ -91,8 +93,11 @@ def main():
             # If the users input is not 0, 1, 2, or 3, a ValueError is raised.
             if (menu != 0 and menu != 1 and menu != 2 and menu != 3):
                 raise ValueError("must enter 0, 1, 2, or 3")
+        except ValueError:
+            print("You must select either 1, 2, 3, or 0")
+        else:
             # If 0 is selected, the program stops.
-            elif menu == 0:
+            if menu == 0:
                 break
             # If 1, 2, or 3 is is selected the function calls on the sensors instance method to update the light, pedestrian, or vehicle status.
             # The print_message funcion is then called to print the action message and current status.
@@ -101,8 +106,6 @@ def main():
                 sensor.update_status(menu, change)
                 print("")
                 print_message(sensor)
-        except ValueError:
-            print("You must select either 1, 2, 3, or 0")
 
 # Conventional Python code for running main within a larger program
 # No additional code should be included below this
